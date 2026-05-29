@@ -4,6 +4,13 @@ from .models import SecurityLog
 
 
 def home(request):
+    if not request.session.get(
+            "username"
+    ):
+        from django.shortcuts import redirect
+
+        return redirect("/")
+
     username = request.POST.get(
         'username',
         ''

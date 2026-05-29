@@ -1,0 +1,49 @@
+<html>
+
+<body style="
+font-family:Arial;
+padding:50px;
+">
+
+<h1>
+
+Cloud Security Monitor Login
+
+</h1>
+
+<form method="POST">
+
+{% csrf_token %}
+
+Username
+
+<br>
+
+<input
+name="username"
+>
+
+<br><br>
+
+Password
+
+<br>
+
+<input
+type="password"
+name="password"
+>
+
+<br><br>
+
+<button>
+
+Login
+
+</button>
+
+</form>
+
+</body>
+
+</html>
