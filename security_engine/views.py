@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .policy_engine import validate_policy
 from .models import SecurityLog
+from .openstack_service import get_users
 
 
 def home(request):
@@ -98,6 +99,7 @@ def home(request):
 
     allowed_count = total_requests - blocked_count
 
+    cloud_users = get_users()
     context = {
         "blocked_count": blocked_count,
 
@@ -117,6 +119,7 @@ def home(request):
 
         "logs": logs,
         "suspicious_users": suspicious_users,
+        "cloud_users": cloud_users,
 
     }
 

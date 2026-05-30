@@ -35,7 +35,29 @@ Cloud Security Monitor
     <h2>
 
 Dashboard Metrics
+<hr>
 
+<h3>
+
+OpenStack Cloud Users
+
+</h3>
+
+<ul>
+
+{% for user in cloud_users %}
+
+<li>
+
+{{ user }}
+
+</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
 </h2>
 
 <div style="
@@ -109,17 +131,24 @@ Username
 
 <br>
 
-<input
+<select
 name="username"
-value="{{ username }}"
 style="
 width:100%;
 padding:10px;
 ">
 
-<br><br>
+{% for user in cloud_users %}
 
+<option>
 
+{{ user }}
+
+</option>
+
+{% endfor %}
+
+</select>
 <label>
 
 Role
